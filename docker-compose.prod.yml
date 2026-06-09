@@ -1,0 +1,11 @@
+services:
+  api:
+    image: ghcr.io/jacksondprice/cobalt-bridge-infra:latest
+    ports: ["8080:8080"]
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY}
+  worker:
+    image: ghcr.io/jacksondprice/cobalt-bridge-infra:latest
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
